@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-spice-50: #fff8f0;
+  --color-kyoto-red: #b91c1c;
+  --color-kyoto-gold: #d97706;
+  --color-kyoto-brown: #431407;
+  --color-chili: #dc2626;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans text-kyoto-brown antialiased;
+  background: linear-gradient(180deg, #fff8f0 0%, #ffedd5 30%, #fff7ed 100%);
+  background-attachment: fixed;
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .focus\:not-sr-only:focus {
+    position: fixed;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24;
+  }
+  .container-narrow {
+    @apply max-w-4xl mx-auto;
+  }
+  .container-wide {
+    @apply max-w-6xl mx-auto;
+  }
+}
